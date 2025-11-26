@@ -1,0 +1,10 @@
+# https://syzkaller.appspot.com/bug?id=9bbad53197313fd7942cfe9e6574a14620fb3bd0
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"binfmt_misc":true,"close_fds":true,"vhci":true,"ieee802154":true,"sysctl":true}
+r0 = socket$nl_route(0x10, 0x3, 0x0)
+r1 = socket(0x11, 0x80a, 0x0)
+ioctl$sock_SIOCGIFINDEX(r1, 0x8933, &(0x7f0000000300)={'bond0\x00', <r2=>0x0})
+sendmsg$nl_route(r0, &(0x7f0000000340)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f00000004c0)=@newlink={0x44, 0x10, 0x401, 0x0, 0x0, {0x0, 0x0, 0x0, r2}, [@IFLA_LINKINFO={0x24, 0x12, 0x0, 0x1, @bond={{0x9}, {0x14, 0x2, 0x0, 0x1, [@IFLA_BOND_MIIMON={0x8, 0x3, 0x4}, @IFLA_BOND_USE_CARRIER={0x5}]}}}]}, 0x44}}, 0x0)
+sendmsg$NFT_BATCH(0xffffffffffffffff, &(0x7f00000000c0)={0x0, 0x0, &(0x7f0000000040)={&(0x7f0000000200)=ANY=[@ANYBLOB="140000001000010000000000000000000000000a20000000000a05000000000000000000010000000900010073797a30000000002c000000030a01020000000000000000010000000900010073797a30000000000900030073797a320000000064000000060a010400000000000000000100000008000b40000000003c000480240001800b0001007470726f787900001400028008000140000000020800034000000016140001800b0001006578746864720000040002800900010073797a30"], 0xd8}}, 0x0)
+r3 = socket$nl_route(0x10, 0x3, 0x0)
+sendmsg$nl_route(r3, &(0x7f0000000480)={0x0, 0x0, &(0x7f0000000140)={&(0x7f0000000200)=ANY=[@ANYBLOB='@'], 0x85}}, 0x0)

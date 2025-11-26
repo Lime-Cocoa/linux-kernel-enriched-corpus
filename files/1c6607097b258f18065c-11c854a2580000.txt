@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=ba0c0515e024183b67473e0e152ef6424e7fa760
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+ioctl$UFFDIO_REGISTER(0xffffffffffffffff, 0xc020aa00, 0x0)
+mremap(&(0x7f00002c0000/0x3000)=nil, 0x3000, 0x3000, 0x7, &(0x7f00003b8000/0x3000)=nil)

@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=a4f75ba8e578df89e9cb35fc04908a9e7dde1c7a
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"leak":true,"close_fds":false,"callcomments":true}
+timerfd_settime(0xffffffffffffffff, 0x0, &(0x7f0000000040)={{0x77359400}, {0x0, 0x3938700}}, 0x0)
+bpf$MAP_CREATE(0x0, &(0x7f0000000000)=@base={0x5, 0x2, 0x40, 0x40, 0x41}, 0x5e)

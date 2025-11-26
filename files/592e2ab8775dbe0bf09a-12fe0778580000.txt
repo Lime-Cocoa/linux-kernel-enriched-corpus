@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=d03aad4eb11cef28ae32deaa76832494f73b4eba
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":2,"slowdown":10,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+openat$nci(0xffffffffffffff9c, &(0x7f0000000080), 0x2, 0x0)
+r0 = openat$rfkill(0xffffffffffffff9c, &(0x7f00000001c0), 0x80602, 0x0)
+write$rfkill(r0, &(0x7f0000000200)={0x0, 0x0, 0x3, 0x7}, 0x8)

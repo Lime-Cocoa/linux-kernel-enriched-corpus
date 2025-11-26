@@ -1,0 +1,8 @@
+# https://syzkaller.appspot.com/bug?id=6422f5d21a5b7bb7784dbc1e419bf54cbb3b5e7f
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true,"callcomments":true}
+r0 = syz_usb_connect$lan78xx(0x3, 0x3f, &(0x7f0000000dc0)={{0x12, 0x1, 0x200, 0xff, 0xff, 0xff, 0x40, 0x424, 0x7850, 0x0, 0x1, 0x2, 0x3, 0x1, [{{0x9, 0x2, 0x2d}}]}}, 0x0)
+syz_clone3(&(0x7f0000000640)={0x182841600, &(0x7f0000000180)=<r1=>0xffffffffffffffff, 0x0, 0x0, {0x6}, 0x0, 0x0, 0x0, 0x0}, 0x58)
+r2 = pidfd_getfd(r1, r1, 0x0)
+syz_usb_control_io$lan78xx(r0, 0x0, &(0x7f0000000680)={0x34, &(0x7f0000000700)=ANY=[], 0x0, 0x0, 0x0, 0x0, 0x0})
+setns(r2, 0x8000000)

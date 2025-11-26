@@ -1,0 +1,14 @@
+# https://syzkaller.appspot.com/bug?id=a17758a1da2469f2e275c2847fd913e387465c75
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+r0 = syz_usb_connect$hid(0x0, 0x36, &(0x7f0000000000)=ANY=[@ANYBLOB="1201000000000040260933334000000000010902240001000000000904000001030100000921000000012201000905810308"], 0x0)
+syz_usb_connect$printer(0x1, 0x0, 0x0, &(0x7f0000000680)={0x0, 0x0, 0x5, &(0x7f0000000180)={0x5, 0xf, 0x5}, 0x7, [{0x4, &(0x7f0000000200)=@lang_id={0x4, 0x3, 0x2c09}}, {0x4, &(0x7f0000000280)=@lang_id={0x4, 0x3, 0xfcff}}, {0x0, 0x0}, {0xd7, &(0x7f0000000400)=@string={0xd7, 0x3, "4b76e187eef68bbbdd2685e203601a8c6dc28cf3b5bbfe6d36a1788857b07e450cdf86e4a8ddbd5d2a637d313a8bc409a31423cb2939c47f0fa05e99ded38a568a4418bafeadb3eb7a090642419ceb1fd4521b1fd4b5b280297ac0720fcaf359f6430432f80605c7ab56bc2b5ccfb9e8606a50bf27842198e343c98b9f94b62c9949bba40a3379ad0d6a98c4627e4dd99fc1f8c8d24541bf469f9ec6f0269342c357fa9766042a8fee31f6f836b1f737f555804192a9c7b108b7b54d32452a97554fa0a1454299c9211d10477bf9f4343f6f84048b"}}, {0x0, 0x0}, {0x0, 0x0}, {0x13, &(0x7f0000000640)=@string={0x13, 0x3, "17829607766994676fd704f5425e6f9f40"}}]})
+syz_usb_control_io(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_control_io(0xffffffffffffffff, 0x0, &(0x7f0000001740)={0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, &(0x7f0000000040)={0x40, 0x19, 0x2, "0200"}, 0x0, 0x0, 0x0, 0x0})
+syz_usb_control_io$cdc_ncm(0xffffffffffffffff, 0x0, &(0x7f00000012c0)={0x44, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0})
+syz_usb_connect(0x0, 0x0, 0x0, 0x0)
+syz_usb_control_io$printer(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_control_io$hid(r0, 0x0, 0x0)
+syz_usb_control_io(r0, &(0x7f0000000080)={0x2c, &(0x7f0000000100)=ANY=[@ANYBLOB="000002"], 0x0, 0x0, 0x0, 0x0}, 0x0)
+syz_usb_connect(0x5, 0x0, 0x0, &(0x7f0000000800)={0x0, 0x0, 0x0, 0x0, 0x9, [{0x37, &(0x7f00000001c0)=@string={0x37, 0x3, "76af25bd6c6f220e0b98b9383d0cdc3b196a7d58b9fd615d97e750a421236cf53e45bc9f3b54bae5d9a4b7864edb393a079edb4a33"}}, {0x0, 0x0}, {0x4, &(0x7f0000000240)=@lang_id={0x4}}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x0, 0x0}, {0x2, &(0x7f0000000600)=@string={0x2}}]})
+syz_usb_ep_write(r0, 0x81, 0xffffff75, &(0x7f00000002c0)="b9425b44651dd23241963599000000110000004a16941ff5f4b4f1f0add7fcf2b877fceafffffffffff1ffdf4cd9f5d3969890522c77157d88010000003a5bd5531d459dffff03000000000091ff000000e8f5b3371da3635b8b4fa637135800001f65e4b436aa9e50bc0f19b7d3372ff9ebcede1fb5e9428f54d5d1f0cc752cf246a5d2da34a5aa97dc14a469c3dd3e26b41c356484e46fd66e3f2c7807e8773eed7b94fa099ab84feadec2ea95f65bba452eae5b0900f98a979a88c517a2dc360a00237723e2f467af706ea17226296b3a10a351cb47aba2c6b836c90679b4dd859ddc9e4800448aab0000000000000d75f34bb50d8d7084")

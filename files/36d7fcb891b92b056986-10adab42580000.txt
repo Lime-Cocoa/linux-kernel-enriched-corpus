@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=3feb67c72c0ff010c7c13edfdca4936d18b36743
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"resetnet":true,"binfmt_misc":true,"close_fds":true,"callcomments":true}
+r0 = syz_open_procfs$userns(0x0, &(0x7f0000000140))
+setns(r0, 0x10000000)

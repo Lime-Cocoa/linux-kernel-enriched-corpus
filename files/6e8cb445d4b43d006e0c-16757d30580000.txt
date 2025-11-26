@@ -1,0 +1,13 @@
+# https://syzkaller.appspot.com/bug?id=4946dc7ac24f5406d4686f5c7436725fff5b1f02
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"tmpdir":true}
+unshare(0x68040200)
+sendmsg$NL802154_CMD_NEW_SEC_KEY(0xffffffffffffffff, 0x0, 0x0)
+ioctl$USBDEVFS_DISCONNECT_CLAIM(0xffffffffffffffff, 0x8108551b, 0x0)
+ioctl$USBDEVFS_SUBMITURB(0xffffffffffffffff, 0x8038550a, 0x0)
+io_uring_enter(0xffffffffffffffff, 0x0, 0x0, 0x7, 0x0, 0x0)
+openat$procfs(0xffffffffffffff9c, 0x0, 0x0, 0x0)
+write$uinput_user_dev(0xffffffffffffffff, 0x0, 0x0)
+sendmsg$nl_route_sched(0xffffffffffffffff, 0x0, 0x0)
+sendmmsg(0xffffffffffffffff, 0x0, 0x0, 0x0)
+ioctl$UI_DEV_CREATE(0xffffffffffffffff, 0x5501)

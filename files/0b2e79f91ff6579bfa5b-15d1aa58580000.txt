@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=6422f5d21a5b7bb7784dbc1e419bf54cbb3b5e7f
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+r0 = syz_open_procfs$namespace(0x0, &(0x7f0000000140)='ns/mnt\x00')
+setns(r0, 0x0)

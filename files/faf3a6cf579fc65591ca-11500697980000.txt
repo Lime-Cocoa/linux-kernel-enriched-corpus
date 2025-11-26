@@ -1,0 +1,23 @@
+# https://syzkaller.appspot.com/bug?id=4598b89f4e1b86ff4e4c2f9801daecd71ce14cd9
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+r0 = syz_usb_connect(0x0, 0x36, &(0x7f0000000200)=ANY=[@ANYBLOB="1201000014da2108ab12a390eb1e000000010902240001b30000040904410017ff5d810009050f1f01040000000905830300b3"], 0x0)
+ioctl$EVIOCSCLOCKID(0xffffffffffffffff, 0x400445a0, &(0x7f0000000080)=0xb309)
+syz_usb_control_io(0xffffffffffffffff, &(0x7f0000000380)={0x2c, &(0x7f00000000c0)={0x20, 0x1, 0x9a, {0x9a, 0x32, "2aa17cc6e02f27cdeb33edc81348af69a968f8e631b2d3baa5621a64f851ff9abb62b6ef9669801800d7af98907c0ade3bed16687765ffb861aef01d2f0f89f30f1dc84f9d6d659e860a268e248738aeae949b5acde194cddf1cf11e75dc7b59dde8dec7a7ee48fff152f437e0bb10994c91e79f41d034dd4a819addba816c793865db13649e418b57e7ea1a480f4b9eecc7a8ef61a6d376"}}, 0x0, 0x0, 0x0, 0x0}, 0x0)
+r1 = syz_usb_connect$hid(0x0, 0x36, &(0x7f0000000080)={{0x12, 0x1, 0x0, 0x0, 0x0, 0x0, 0x40, 0x1241, 0x5015, 0x0, 0x0, 0x0, 0x0, 0x1, [{{0x9, 0x2, 0x24, 0x1, 0x0, 0x0, 0x0, 0x0, [{{0x9, 0x4, 0x0, 0x0, 0x1, 0x3, 0x0, 0x0, 0x0, {0x9, 0x21, 0x0, 0x0, 0x1, {0x22, 0x5}}}}]}}]}}, 0x0)
+syz_usb_control_io$hid(r1, 0x0, 0x0)
+syz_usb_control_io(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_control_io(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_control_io(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_ep_write$ath9k_ep2(r0, 0x83, 0x3f, &(0x7f0000000180)=@generic={0x6, 0x2, 0x37, "614d931d", "298b7e798ed55748f2b0092bf9f42ab54b1dd5453e8731eb96eec73203da68334bb314549bb87d4074d7d16afbdcd97e6f34d128aa0082"})
+syz_usb_control_io(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_control_io$cdc_ecm(r1, &(0x7f00000005c0)={0x14, &(0x7f00000001c0)=ANY=[@ANYBLOB="02001f0000001e006c4693"], 0x0}, 0x0) (async)
+syz_usb_control_io$cdc_ecm(r1, &(0x7f00000005c0)={0x14, 0x0, 0x0}, 0x0)
+syz_usb_connect$hid(0x0, 0x0, 0x0, 0x0)
+syz_usb_ep_write(0xffffffffffffffff, 0x9, 0xe6, &(0x7f0000000240)="c880dde5af0e20f4ec21d7fa6aa9a152d07d3e30eaaded12e4e8c0872c132ebbb98ecc048c1a877c5392d39000e1663814dbea2b351e31b4c85ee4b92efa856aa368d6bb9a686887f56c3055a21ca91e65780352838f9938ae8730993563a23ed7be6ded988f31a4f5de5af6c8f0cfd6a38ac24c86dd7dfe49f3a268bd3f43c43434ca9b9874490ae0d6b48ecf2c0d7a1e8b58acb40605aa2606ddabadbd2da6610596d059b9a8ad242ed37fed9064e014cc066850577b90dfcbd6cd5111f4ca4734caca8b92a0e90d4ab4c68de1d05561d70c76c8aa5997edce3e0354f443d1079ac07950c5") (async)
+syz_usb_ep_write(0xffffffffffffffff, 0x9, 0xe6, &(0x7f0000000240)="c880dde5af0e20f4ec21d7fa6aa9a152d07d3e30eaaded12e4e8c0872c132ebbb98ecc048c1a877c5392d39000e1663814dbea2b351e31b4c85ee4b92efa856aa368d6bb9a686887f56c3055a21ca91e65780352838f9938ae8730993563a23ed7be6ded988f31a4f5de5af6c8f0cfd6a38ac24c86dd7dfe49f3a268bd3f43c43434ca9b9874490ae0d6b48ecf2c0d7a1e8b58acb40605aa2606ddabadbd2da6610596d059b9a8ad242ed37fed9064e014cc066850577b90dfcbd6cd5111f4ca4734caca8b92a0e90d4ab4c68de1d05561d70c76c8aa5997edce3e0354f443d1079ac07950c5")
+syz_usb_ep_write$ath9k_ep2(r0, 0x83, 0x8, &(0x7f0000000080)=ANY=[]) (async)
+syz_usb_ep_write$ath9k_ep2(r0, 0x83, 0x8, &(0x7f0000000080)=ANY=[])
+syz_usb_connect(0x0, 0x24, &(0x7f0000000000)={{0x12, 0x1, 0x0, 0xf8, 0xff, 0xeb, 0x8, 0xc583, 0xa95c, 0x552f, 0x1, 0x2, 0x3, 0x1, [{{0x9, 0x2, 0x12, 0x1, 0x0, 0x0, 0x0, 0x0, [{{0x9, 0x4, 0x0, 0x0, 0x0, 0x2, 0xc, 0x7}}]}}]}}, 0x0) (async)
+syz_usb_ep_write$ath9k_ep2(r0, 0x83, 0x8, &(0x7f0000000000)=ANY=[@ANYBLOB="d6801ec289a1ac25dbb96c785ac81bf633e933f869e244c573a9eee88a26ae7d66e5f9fbd0026a77cfeaaddb2891c832559fa4e5f33606b23778106dfb7a975dd3674392bc9270007f5e4969b6583286eabd6683fd38925f4def47c29382b30a54e2f951207e3483"])
+syz_usb_ep_write$ath9k_ep2(r0, 0x83, 0x8, &(0x7f0000000000)=ANY=[@ANYBLOB="d6801ec289a1ac25dbb96c785ac81bf633e933f869e244c573a9eee88a26ae7d66e5f9fbd0026a77cfeaaddb2891c832559fa4e5f33606b23778106dfb7a975dd3674392bc9270007f5e4969b6583286eabd6683fd38925f4def47c29382b30a54e2f951207e3483"])

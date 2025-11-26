@@ -1,0 +1,12 @@
+# https://syzkaller.appspot.com/bug?id=7ef9dc7d3f28ac29e0decf78905b343f5eea7b03
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"segv":true}
+syz_mount_image$hfs(&(0x7f0000000040), &(0x7f00000000c0)='./bus\x00', 0x100c0d4, &(0x7f0000000340)=ANY=[], 0x1, 0x270, &(0x7f00000008c0)="$eJzs3UFrE0EYxvFnNrFGW+raVgTxINWCJ2nrRbwI0m/gxZOoTYRiqKAV1IvVs/gBvPsV/BCexLPgzZPee6vMuxOzSbPZNCZOEv8/SNhk5915Jzvp7JtQIgD/rdtb3z9e/+FvTqqoIummlEiqSVVJ53S+9nx3b2ev2aj3O1DFIvzNKYt0R9ps7zZ6hfo4iwhS/6iqhfxzGI/at9gZYBLYuz/zK/98Ip0M707bX4uS3ejtx04gMnegA73QYuw8AABxhfU/Cev8Qrh+TxJpLSz7nev/lC+gB7ETiCy3/luVdej8+T1ju9r1npVwfn/SqhKH6WtO2cyqdCRQVlVaLsmpRzvNxrXtJ816ore6FeSardh9PZu6Lfls3xw99GqP2rSP4cc+b2M44cewWZD/8mh7LOc+uy/unkv1QfU/13/VQ+dPk52ptOtMZfmvFx/RRplmrQpGedY6uRB6CPqOsqKuNPLmwjE7PiBIy/K0qKWuqGx0GyVRyz2jNkuiVrqj2rO5OHLc3Ht3163qpz5pK3f9n/hXe02DvDN9G2sZZkbf8VStZWrribtkT+1f7NkyGXpIOL53eqgbWnz28tXjB81m4ykbQ2y8Di/mpOQz6EZrEkxKPjO74V/kKL1X/3pmRvmrhH+sfdKPGch3M7PCX3e5rP7L1SvrViL5u7TPdfph2cFzR9woqA2W7P50cQXXwdlHD/NyRV9FDFpzXb4qXRmkx0wa8pwRbktfdZ/P/wEAAAAAAAAAAAAAAAAAAKbN6P7loKaiXbHHCAAAAAAAAAAAAAAAAAAAAADAtJu43/+9o+wRv/8LjN3vAAAA//9nXXUi")
+r0 = creat(&(0x7f0000000040)='./bus\x00', 0x0)
+fcntl$setstatus(r0, 0x4, 0x6000)
+io_setup(0x200, &(0x7f0000000140)=<r1=>0x0)
+r2 = open(&(0x7f0000000100)='./bus\x00', 0x14113e, 0x39)
+r3 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000040)='cgroup.controllers\x00', 0x275a, 0x0)
+write$binfmt_script(r3, &(0x7f0000000000), 0x208e24b)
+write$binfmt_script(r2, &(0x7f0000000080), 0x208e24b)
+io_submit(r1, 0x3b, &(0x7f0000000540)=[&(0x7f00000000c0)={0x25, 0x0, 0x2, 0x1, 0x0, r0, &(0x7f0000000000), 0x4000}])

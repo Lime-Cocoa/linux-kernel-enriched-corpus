@@ -1,0 +1,13 @@
+# https://syzkaller.appspot.com/bug?id=4fb33a0100cc2d174ccf7722d9974bad7870120b
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+sendmsg$kcm(0xffffffffffffffff, &(0x7f0000000940)={0x0, 0x0, &(0x7f0000000180)=[{&(0x7f0000000000)="d80000001c0081044e81f782db44b9040a1d08030e000000e8fea4a1180015000600142603600e1208000f1000810401a80016000a0001", 0x37}], 0x1, 0x0, 0x0, 0x7400}, 0x0)
+bind$inet6(0xffffffffffffffff, &(0x7f0000000000)={0xa, 0x10000000004e20, 0x0, @mcast2, 0x6}, 0x1c)
+write$cgroup_subtree(0xffffffffffffffff, &(0x7f0000000000)=ANY=[@ANYBLOB="8fedcb7907009875f37538e486dd6317ce620300fe"], 0xfe1b)
+r0 = socket$kcm(0x10, 0x2, 0x0)
+sendmsg$NFT_BATCH(0xffffffffffffffff, &(0x7f0000000080)={0x0, 0x0, &(0x7f0000000040)={&(0x7f0000000300)=ANY=[@ANYBLOB="140000001000010000000000000000000000000a5c000000060a09040000000000000000020000000900020073797a32000000000900010073797a3000000000300004802c"], 0x84}}, 0x0)
+write$cgroup_subtree(r0, &(0x7f0000000000)=ANY=[@ANYBLOB="563f00001800599c6d0eab070004000523"], 0xfe33)
+bind$inet6(0xffffffffffffffff, 0x0, 0x0)
+write$cgroup_subtree(0xffffffffffffffff, 0x0, 0xfe1b)
+r1 = socket$kcm(0x10, 0x2, 0x0)
+write$cgroup_subtree(r1, &(0x7f0000000000)=ANY=[@ANYBLOB="563f00001900599c6d0eab070004000523"], 0xfe33)

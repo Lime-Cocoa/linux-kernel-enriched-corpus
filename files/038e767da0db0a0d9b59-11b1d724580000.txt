@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=6c0e2852787d05785c6bf0a087c30ff7189516ee
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"close_fds":true,"ieee802154":true,"swap":true,"tmpdir":true,"segv":true}
+mmap(&(0x7f0000000000/0xff5000)=nil, 0xff5000, 0x2, 0x4c831, 0xffffffffffffffff, 0x0)
+mbind(&(0x7f0000001000/0x800000)=nil, 0x800000, 0x0, 0x0, 0x40, 0x2)
+madvise(&(0x7f0000000000/0x600000)=nil, 0x600002, 0x9)
+socket(0x10, 0x3, 0x0)

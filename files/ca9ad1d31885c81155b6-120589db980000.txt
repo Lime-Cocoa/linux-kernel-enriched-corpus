@@ -1,0 +1,12 @@
+# https://syzkaller.appspot.com/bug?id=9bbad53197313fd7942cfe9e6574a14620fb3bd0
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":5,"slowdown":1,"sandbox":"namespace","sandbox_arg":0,"tun":true,"netdev":true,"close_fds":true,"tmpdir":true}
+mkdirat(0xffffffffffffff9c, &(0x7f0000002040)='./file0\x00', 0x0)
+r0 = openat$fuse(0xffffffffffffff9c, &(0x7f0000002080), 0x42, 0x0)
+mount$fuse(0x0, &(0x7f00000042c0)='./file0\x00', &(0x7f0000000100), 0x0, &(0x7f0000000200)={{'fd', 0x3d, r0}, 0x2c, {'rootmode', 0x3d, 0x4000}})
+r1 = socket$kcm(0x10, 0x2, 0x0)
+r2 = socket$nl_route(0x10, 0x3, 0x0)
+r3 = socket(0x11, 0x80a, 0x0)
+ioctl$sock_SIOCGIFINDEX(r3, 0x8933, &(0x7f0000000300)={'bond0\x00', <r4=>0x0})
+sendmsg$nl_route(r2, &(0x7f0000000340)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000080)=@newlink={0x44, 0x10, 0x401, 0x0, 0x0, {0x0, 0x0, 0x0, r4}, [@IFLA_LINKINFO={0x24, 0x12, 0x0, 0x1, @bond={{0x9}, {0x14, 0x2, 0x0, 0x1, [@IFLA_BOND_MIIMON={0x8, 0x3, 0x4}, @IFLA_BOND_USE_CARRIER={0x5}]}}}]}, 0x44}}, 0x0)
+sendmsg$kcm(r1, &(0x7f0000000600)={0x0, 0xfffffffe, &(0x7f0000000080)=[{&(0x7f0000000000)="2e00000010008188040f80ec59acbc0413a1f8480d0000005e140604000000000e000a000f00000002800000121f", 0x2e}], 0x1}, 0x0)

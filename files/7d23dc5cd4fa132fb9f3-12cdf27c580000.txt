@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=b213c0c5a1b4d79c3de14255c20c43f6b2ed9fde
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":4,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+unshare$auto(0x20000) (rerun: 32)
+bpf$auto(0x0, &(0x7f0000000780)=@link_update={0xa, @new_map_fd=0x5, 0x4007, @old_prog_fd=0x13b}, 0xa3)

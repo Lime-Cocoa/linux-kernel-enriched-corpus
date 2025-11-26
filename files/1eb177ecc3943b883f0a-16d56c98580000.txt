@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=5ddac33368ddb55edb1e152940542d2bd497ba88
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":4,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+mmap$auto(0x0, 0x20009, 0x10000000000df, 0xeb2, 0x401, 0x8000)
+io_uring_setup$auto(0x6, 0x0)
+close_range$auto(0x2, 0x8, 0x0)
+openat$auto_dvb_frontend_fops_dvb_frontend(0xffffffffffffff9c, &(0x7f0000000000), 0x1, 0x0)

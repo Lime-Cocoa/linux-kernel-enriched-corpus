@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=0a8eaaa592cd372409d507a30fd401482518906f
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"close_fds":true,"vhci":true}
+r0 = syz_init_net_socket$bt_l2cap(0x1f, 0x5, 0x0)
+connect$bt_l2cap(r0, &(0x7f0000000100)={0x1f, 0x1}, 0xe)
+prctl$PR_SET_SECCOMP(0x16, 0x2, &(0x7f0000000000)={0x1, &(0x7f00000000c0)=[{0x200000000006, 0x0, 0x0, 0x7ffc1ffb}]})

@@ -1,0 +1,12 @@
+# https://syzkaller.appspot.com/bug?id=bae0fd140352e4b5d8b65f3ec3c50bcd3ffc7a13
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+r0 = getpid()
+r1 = syz_pidfd_open(r0, 0x0)
+r2 = openat$nullb(0xffffffffffffff9c, &(0x7f0000001000), 0x1e9802, 0x0)
+ioctl$BLKBSZSET(r2, 0x40081271, &(0x7f0000000100)=0x10000)
+r3 = openat$nullb(0xffffffffffffff9c, &(0x7f0000000000), 0x282, 0x0)
+r4 = dup(r3)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2000007, 0x38011, r4, 0x0)
+madvise(&(0x7f0000000000/0x800000)=nil, 0x800000, 0xe)
+process_madvise(r1, &(0x7f00000015c0)=[{&(0x7f0000000000)="96", 0x1}], 0x1, 0x65, 0x0)

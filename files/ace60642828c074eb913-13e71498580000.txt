@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=30082ca4e5f5935e81f35f2002045aaf87913a29
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+openat$auto_snapshot_fops_user(0xffffffffffffff9c, &(0x7f0000000200), 0x400, 0x0)
+r0 = openat$auto_kernfs_file_fops_kernfs_internal(0xffffffffffffff9c, &(0x7f00000001c0)='/sys/module/hibernate/parameters/compressor\x00', 0x1a1942, 0x0)
+write$auto(r0, &(0x7f0000005900)='\\\x00', 0x40db)

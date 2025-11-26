@@ -1,0 +1,13 @@
+# https://syzkaller.appspot.com/bug?id=4946dc7ac24f5406d4686f5c7436725fff5b1f02
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+unshare(0x68040200)
+r0 = syz_io_uring_setup(0x4bfa, 0x0, 0x0, 0x0)
+r1 = syz_open_dev$usbfs(0x0, 0x75, 0x109b01)
+ioctl$USBDEVFS_SUBMITURB(r1, 0x8038550a, 0x0)
+io_uring_enter(r0, 0x0, 0x0, 0x7, 0x0, 0x0)
+r2 = socket(0x2a, 0x2, 0x0)
+sendmsg$nl_route_sched(r2, 0x0, 0x4000)
+getsockname$packet(r2, 0x0, 0x0)
+sendmsg$nl_route_sched(0xffffffffffffffff, 0x0, 0x0)
+socket$netlink(0x10, 0x3, 0x0)

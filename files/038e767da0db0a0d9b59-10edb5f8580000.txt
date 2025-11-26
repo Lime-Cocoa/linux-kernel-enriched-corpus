@@ -1,0 +1,12 @@
+# https://syzkaller.appspot.com/bug?id=6c0e2852787d05785c6bf0a087c30ff7189516ee
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+mmap$auto(0x0, 0x4, 0x4000000000df, 0x40eb1, 0x401, 0x300000000000)
+madvise$auto(0x0, 0xfffffffffffefffd, 0x17)
+mbind$auto(0x0, 0x100000004, 0x100000000, 0x0, 0x6, 0x2)
+madvise$auto(0x108000, 0x800034, 0x9)
+openat$auto_kernfs_file_fops_kernfs_internal(0xffffffffffffff9c, 0x0, 0x62, 0x0)
+mmap$auto(0x0, 0x20009, 0xdf, 0xeb1, 0x401, 0x8000)
+socket(0x2, 0x1, 0x106)
+bpf$auto(0x16, 0x0, 0xcf)
+bind$auto(0x3, 0x0, 0x6c)

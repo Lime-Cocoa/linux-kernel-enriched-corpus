@@ -1,0 +1,11 @@
+# https://syzkaller.appspot.com/bug?id=48b196c1e0169bd8c681495f13684385332cea0f
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"namespace","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+openat(0xffffffffffffff9c, &(0x7f000000c380)='./file0\x00', 0x40, 0x0)
+openat$fuse(0xffffffffffffff9c, &(0x7f0000002080), 0x42, 0x0)
+r0 = socket$kcm(0x10, 0x2, 0x0)
+r1 = socket$nl_route(0x10, 0x3, 0x0)
+r2 = socket(0x11, 0x80a, 0x0)
+ioctl$sock_SIOCGIFINDEX(r2, 0x8933, &(0x7f0000000300)={'bond0\x00', <r3=>0x0})
+sendmsg$nl_route(r1, &(0x7f0000000340)={0x0, 0x0, &(0x7f00000001c0)={&(0x7f0000000400)=ANY=[@ANYBLOB="4c0000001000010400"/20, @ANYRES32=r3, @ANYBLOB="00000000000000002c00128009000100626f6e64000000001c0002800800030004000000050006"], 0x4c}}, 0x0)
+sendmsg$kcm(r0, &(0x7f0000000600)={0x0, 0xfffffffe, &(0x7f0000000080)=[{&(0x7f0000000000)="2e00000010008188040f80ec59acbc0413a1f8480d0000005e140604000000000e000a000f00000002800000121f", 0x2e}], 0x1}, 0x0)

@@ -1,0 +1,11 @@
+# https://syzkaller.appspot.com/bug?id=7a8340b43d4429fde59614529d858a25cbf49e08
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+socket$inet_icmp_raw(0x2, 0x3, 0x1)
+syz_init_net_socket$bt_hci(0x1f, 0x3, 0x5)
+close(0x4)
+syz_open_procfs$namespace(0x0, &(0x7f0000000080)='ns/ipc\x00')
+unshare(0x6a040000)
+sendmsg$nl_route(0xffffffffffffffff, 0x0, 0x0)
+r0 = socket$nl_rdma(0x10, 0x3, 0x14)
+sendmsg$RDMA_NLDEV_CMD_SET(r0, &(0x7f0000000340)={0x0, 0x0, &(0x7f0000000240)={&(0x7f0000000140)=ANY=[@ANYBLOB="180000000210"], 0x18}}, 0x0)

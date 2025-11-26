@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=0986e0af6fdc7261ad39cd60a928ee075cea78df
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+r0 = syz_open_dev$tty1(0xc, 0x4, 0x1)
+ioctl$KDSKBENT(r0, 0x4b47, &(0x7f0000000300)={0x0, 0x7f, 0x20f})
+r1 = syz_open_dev$evdev(&(0x7f00000002c0), 0xc000, 0x142)
+write$evdev(r1, &(0x7f0000000640)=[{{0x77359400}, 0x1, 0x7f, 0x2}], 0x18)

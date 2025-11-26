@@ -1,0 +1,9 @@
+# https://syzkaller.appspot.com/bug?id=da3da1f9aff1e2e22ab0c9a7eeac3d978e1a81c7
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"cgroups":true,"close_fds":true,"tmpdir":true}
+r0 = openat$auto_kernfs_file_fops_kernfs_internal(0xffffffffffffff9c, &(0x7f00000000c0)='/sys/module/block2mtd/parameters/block2mtd\x00', 0x601, 0x0)
+r1 = open(&(0x7f0000000000)='./cgroup\x00', 0x0, 0x64)
+fchdir$auto(r1)
+mkdir$auto(&(0x7f00000002c0)='./cgroup\x00', 0x9)
+rmdir$auto(&(0x7f0000000300)='./cgroup\x00')
+write$auto_kernfs_file_fops_kernfs_internal(r0, &(0x7f0000000000)='3QI', 0x3)

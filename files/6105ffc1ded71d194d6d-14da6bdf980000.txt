@@ -1,0 +1,12 @@
+# https://syzkaller.appspot.com/bug?id=d47fcea929219ef53b5b0f700f2102bed78b6202
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+ioctl$sock_SIOCINQ(0xffffffffffffffff, 0x50009405, 0x0)
+sendmmsg$inet6(0xffffffffffffffff, 0x0, 0x0, 0x0)
+socket$nl_generic(0x10, 0x3, 0x10)
+r0 = ioctl$KVM_CREATE_VM(0xffffffffffffffff, 0xae01, 0x0)
+r1 = ioctl$KVM_CREATE_VCPU(r0, 0xae41, 0x0)
+ioctl$KVM_GET_NESTED_STATE(r1, 0x5000aea5, 0x0)
+add_key(&(0x7f0000000140)='encrypted\x00', &(0x7f0000000180), 0x0, 0x0, 0xfffffffffffffffe)
+close_range(0xffffffffffffffff, 0xffffffffffffffff, 0x2)
+recvmsg(0xffffffffffffffff, 0x0, 0x0)

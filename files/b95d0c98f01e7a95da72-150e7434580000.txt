@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=99058c11cb84c81cd1827fbc57ada2091388f33a
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+r0 = openat$auto_gpiolib_fops_(0xffffffffffffff9c, &(0x7f0000002ec0), 0x80000, 0x0)
+read$auto(r0, 0x0, 0x10000) (fail_nth: 2)

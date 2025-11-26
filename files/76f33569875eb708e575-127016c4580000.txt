@@ -1,0 +1,8 @@
+# https://syzkaller.appspot.com/bug?id=dbfb820268d1939aeb9bd190e47ba944bdcb1a37
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+mmap$auto(0x0, 0x400008, 0xdf, 0x9b72, 0x2, 0x8000)
+r0 = openat$auto_proc_reg_file_ops_compat_inode(0xffffffffffffff9c, &(0x7f00000000c0)='/proc/self/net/afs/addr_prefs\x00', 0x8f3b7a51b8162d21, 0x0)
+write$auto_proc_reg_file_ops_compat_inode(r0, &(0x7f0000000040)="00edd9d1027e0dc0023af10e9bfa1babfa3a3753ca9aee370a", 0x19)
+r1 = openat$auto_proc_mountinfo_operations_mnt_namespace(0xffffffffffffff9c, &(0x7f0000000000)='/proc/self/mountinfo\x00', 0x20000, 0x0)
+read$auto_proc_mountinfo_operations_mnt_namespace(r1, &(0x7f0000000040)=""/4096, 0x1000)

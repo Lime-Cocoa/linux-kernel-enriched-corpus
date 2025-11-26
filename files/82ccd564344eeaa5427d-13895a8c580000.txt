@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=20b7b55fb7940835d9600897d28a4fa556a4a3f7
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"resetnet":true,"close_fds":true,"usb":true,"ieee802154":true,"sysctl":true,"tmpdir":true,"segv":true}
+r0 = socket(0x10, 0x803, 0x0)
+ioctl$sock_SIOCETHTOOL(r0, 0x8946, &(0x7f00000002c0)={'veth0_to_team\x00', &(0x7f0000000000)=@ethtool_cmd={0x2c, 0x6, 0x4, 0x0, 0x0, 0x0, 0x0, 0x0, 0xff}}) (fail_nth: 8)
+ioctl$sock_inet_SIOCSIFFLAGS(r0, 0x8914, &(0x7f0000000040)={'veth0_to_team\x00', 0x3fa1dc947ffe4b82})

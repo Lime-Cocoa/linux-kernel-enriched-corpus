@@ -1,0 +1,16 @@
+# https://syzkaller.appspot.com/bug?id=84755fcc990442b6e1b93e6b6d49701473cd735b
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+r0 = syz_usb_connect$hid(0x0, 0x36, &(0x7f0000000000)=ANY=[@ANYBLOB="1201000000000040260933334000000000010902240001000000000904000001030100000921000000012201000905810308"], 0x0)
+syz_usb_control_io$hid(r0, 0x0, 0x0)
+syz_usb_connect(0x0, 0x36, 0x0, 0x0)
+syz_usb_control_io(r0, &(0x7f0000000080)={0x2c, &(0x7f0000000100)=ANY=[@ANYBLOB="000002"], 0x0, 0x0, 0x0, 0x0}, 0x0)
+r1 = syz_open_dev$char_usb(0xc, 0xb4, 0x0)
+ioctl$EVIOCGMASK(r1, 0x5b15, 0x0)
+syz_usb_control_io(0xffffffffffffffff, &(0x7f0000000680)={0x2c, &(0x7f00000001c0)={0x20, 0x6, 0x9c, {0x9c, 0x30, "6120eaf241623185956609ffe5d9b3f0a9b882987ace2176730f99ff986cdb12f6acde74848aa2e66b86785d3ce24a86f7f4096a51e4828617de7f763b2cbe24ccdeb6ef330452d09fca1bf1ab914dfc12572ddc22dbf339162d75439e6102b657942af153c1ddd068a728fb57ccab558316c663e90d6f35523cd2a9340257e150be9a6b1ee1c754353878e9130c0cf843d6c9dda9e2dbd9feee"}}, &(0x7f00000003c0)={0x0, 0x3, 0x2, @string={0x2}}, &(0x7f00000004c0)={0x0, 0xf, 0xee, {0x5, 0xf, 0xee, 0x5, [@ptm_cap={0x3}, @ss_cap={0xa, 0x10, 0x3, 0x2, 0x0, 0x4, 0x0, 0x8001}, @generic={0xce, 0x10, 0x2, "a64d19eec270da03508fd2e0442a483fed8a4620e3d8028f4e369414d720567b38c74b9465433b4bec61b9be0fc3baab2fd3065e0f6149c3a5809464cb2e05457ae3f3f8406257dc8c246cd6cea5569e37892c6fcfabbfd5fa5fdeaddaca53711ef5caec613fc7ea3b373bc7424cfed0fcdbe70282375e64f0cd2d247fb009259cc71b0885b7bc2995c96adfd0ef6f84a95f8aee7401d375fdd326ec47bd9cbc1e36adfc0b6eae87017c081f6af74b52f5659591edfefc30e2a9e71be1aa8ae3afe01fb9d68386e38f2640"}, @generic={0x3, 0x10, 0x3}, @wireless={0xb, 0x10, 0x1, 0x8, 0x51, 0x0, 0xff, 0x3, 0x2}]}}, 0x0, 0x0}, 0x0)
+syz_usb_ep_write(r0, 0x81, 0xffffff75, &(0x7f00000002c0)="b9425b44651dd23241963599000000110000004a16941ff5f4b4f1f0add7fcf2b877fceafffffffffff1ffdf4cd9f5d3969890522c77157d88010000003a5bd5531d459dffff03000000000091ff000000e8f5b3371da3635b8b4fa637135800001f65e4b436aa9e50bc0f19b7d3372ff9ebcede1fb5e9428f54d5d1f0cc752cf246a5d2da34a5aa97dc14a469c3dd3e26b41c356484e46fd66e3f2c7807e8773eed7b94fa099ab84feadec2ea95f65bba452eae5b0900f98a979a88c517a2dc360a00237723e2f467af706ea17226296b3a10a351cb47aba2c6b836c90679b4dd859ddc9e4800448aab0000000000000d75f34bb50d8d7084")
+ioctl$EVIOCSKEYCODE_V2(0xffffffffffffffff, 0x4b47, 0x0)
+syz_usb_connect$cdc_ncm(0x4, 0x6e, &(0x7f00000000c0)=ANY=[@ANYBLOB="12010000020000002505a1a440000102030109025c0002010000000904000001a3f45747d649f9a30105240000000d240f8100000000000000000006241a0000000905810300000000000904010000020d00000904010102020d0000090582020000000000090503"], 0x0)
+syz_usb_connect(0x0, 0x2d, 0x0, 0x0)
+syz_open_dev$evdev(&(0x7f0000001500), 0x0, 0x0)
+syz_usb_connect(0x0, 0x41, &(0x7f0000000000)={{0x12, 0x1, 0x0, 0x95, 0x22, 0x85, 0x20, 0x421, 0x4b2, 0x1058, 0x1, 0x2, 0x3, 0x1, [{{0x9, 0x2, 0x2f, 0x1, 0x0, 0x0, 0x0, 0x0, [{{0x9, 0x4, 0x7b, 0x0, 0x0, 0x2, 0x2, 0xff, 0x0, [@cdc_ncm={{0x5}, {0x5}, {0xd}, {0x6}}]}}]}}]}}, 0x0)

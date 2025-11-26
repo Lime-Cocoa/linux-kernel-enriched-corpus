@@ -1,0 +1,8 @@
+# https://syzkaller.appspot.com/bug?id=790cf4b424c696d37e981ba9fa60ec62ee96a35b
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+madvise(&(0x7f0000000000/0x800000)=nil, 0x800000, 0xe)
+r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f00000001c0)='memory.events\x00', 0x275a, 0x0)
+mmap(&(0x7f00000a0000/0x3000)=nil, 0x3000, 0x2000001, 0x12, r0, 0x704c2000)
+syz_clone(0x42000000, 0x0, 0x0, 0x0, 0x0, 0x0)
+mprotect(&(0x7f0000000000/0x800000)=nil, 0x800000, 0x6)

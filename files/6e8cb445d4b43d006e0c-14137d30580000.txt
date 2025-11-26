@@ -1,0 +1,9 @@
+# https://syzkaller.appspot.com/bug?id=4946dc7ac24f5406d4686f5c7436725fff5b1f02
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+unshare(0x68040200)
+ioctl$VIDIOC_REQBUFS(0xffffffffffffffff, 0xc0585609, 0x0)
+sendmsg$nl_route_sched(0xffffffffffffffff, 0x0, 0x4000)
+r0 = socket$netlink(0x10, 0x3, 0x0)
+sendmmsg(r0, 0x0, 0x0, 0x0)
+ioctl$UI_DEV_CREATE(0xffffffffffffffff, 0x5501)

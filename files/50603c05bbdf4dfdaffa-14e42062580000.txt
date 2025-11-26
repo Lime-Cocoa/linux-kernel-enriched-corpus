@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=348dc58f4919d4026770fc2911cfcc5e2a6e875a
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+socket(0x2b, 0x1, 0x1)
+r0 = socket$nl_sock_diag(0x10, 0x3, 0x4)
+sendmsg$SOCK_DIAG_BY_FAMILY(r0, &(0x7f0000000140)={0x0, 0x0, &(0x7f0000000080)={&(0x7f0000000780)={0x18, 0x14, 0x601, 0x3, 0x0, {0x2b, 0x4}, [@INET_DIAG_REQ_BYTECODE={0x4}]}, 0x18}, 0x1, 0x0, 0x0, 0x4050}, 0x4000)

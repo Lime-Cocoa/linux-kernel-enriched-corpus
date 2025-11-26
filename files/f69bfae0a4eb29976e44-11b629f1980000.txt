@@ -1,0 +1,10 @@
+# https://syzkaller.appspot.com/bug?id=ebc38a6bbbbc85b1ee1ab977ddde0003ece81cfe
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+pipe(&(0x7f0000000080)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff})
+r2 = socket$inet_udp(0x2, 0x2, 0x0)
+writev(r1, &(0x7f0000000200)=[{&(0x7f00000000c0)="580000001400adfd8a987e40da2e6a262b", 0x11}], 0x1) (rerun: 64)
+socket$inet6(0xa, 0x1, 0x100) (rerun: 64)
+close(r2)
+socket$netlink(0x10, 0x3, 0x4)
+splice(r0, 0x0, r2, 0x0, 0x80000001, 0x0)

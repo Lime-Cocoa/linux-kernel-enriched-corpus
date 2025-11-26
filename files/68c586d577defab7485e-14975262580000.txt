@@ -1,0 +1,12 @@
+# https://syzkaller.appspot.com/bug?id=e8fcfba4af8c395e9b5ced3be95f576e6b2513a9
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true,"callcomments":true}
+r0 = openat$vmci(0xffffffffffffff9c, &(0x7f0000000140), 0x2, 0x0)
+ioctl$IOCTL_VMCI_VERSION2(r0, 0x7a7, &(0x7f0000000040)=0x90000)
+ioctl$IOCTL_VMCI_INIT_CONTEXT(r0, 0x7a0, &(0x7f0000000000)={@local})
+ioctl$IOCTL_VMCI_QUEUEPAIR_ALLOC(r0, 0x7a8, &(0x7f0000000540)={{@hyper, 0x2}, @hyper, 0x0, 0x0, 0x5e})
+socket$inet6_sctp(0xa, 0x1, 0x84)
+r1 = openat$vmci(0xffffffffffffff9c, &(0x7f0000000140), 0x2, 0x0)
+ioctl$IOCTL_VMCI_VERSION2(r1, 0x7a7, &(0x7f0000000040)=0x90000)
+ioctl$IOCTL_VMCI_INIT_CONTEXT(r1, 0x7a0, &(0x7f0000000240)={@hyper})
+ioctl$IOCTL_VMCI_QUEUEPAIR_ALLOC(r1, 0x7a8, &(0x7f0000000540)={{@hyper, 0x2}, @hyper, 0x0, 0x0, 0x5e, 0xfffffffffffffff9})

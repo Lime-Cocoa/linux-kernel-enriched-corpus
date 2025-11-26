@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=ebc38a6bbbbc85b1ee1ab977ddde0003ece81cfe
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true}
+socket$inet6(0xa, 0x1, 0x100)
+sendmsg$inet(0xffffffffffffffff, &(0x7f0000000000)={0x0, 0x0, &(0x7f0000000700)=[{&(0x7f00000000c0)="6880a642beaf34317f0dd3122a90ad0d2b", 0x11}], 0x1}, 0x0)
+r0 = socket$kcm(0x10, 0x2, 0x4)
+sendmsg$inet(r0, &(0x7f0000000540)={0x0, 0xc027, &(0x7f0000000340)=[{&(0x7f00000000c0)="97eb000014006bcd9e", 0xeb97}], 0x1, 0x0, 0x0, 0x1f000000}, 0x600)

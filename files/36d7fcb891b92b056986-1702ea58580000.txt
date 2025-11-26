@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=3feb67c72c0ff010c7c13edfdca4936d18b36743
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"close_fds":true,"ieee802154":true,"callcomments":true}
+setreuid(0xffffffffffffffff, 0xee00)
+setfsuid(0x0)
+syz_init_net_socket$bt_l2cap(0x1f, 0x5, 0x0)

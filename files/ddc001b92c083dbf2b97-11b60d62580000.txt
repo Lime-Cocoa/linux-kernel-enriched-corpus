@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=194151be8eaebd826005329b2e123aecae714bdb
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+close_range$auto(0x2, 0x8, 0x0)
+openat$auto_tracing_buffers_fops_trace(0xffffffffffffff9c, &(0x7f0000000040)='/sys/kernel/debug/tracing/per_cpu/cpu1/trace_pipe_raw\x00', 0x0, 0x0) (rerun: 32)
+mmap$auto(0x0, 0x810004, 0xfff, 0x8000000008012, 0x3, 0x8000)

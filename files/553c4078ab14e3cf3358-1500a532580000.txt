@@ -1,0 +1,8 @@
+# https://syzkaller.appspot.com/bug?id=04446886e6633eaa5c36421105d806b3afb7a0dc
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":4,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"tmpdir":true,"callcomments":true}
+r0 = getpid()
+r1 = syz_pidfd_open(r0, 0x0)
+r2 = pidfd_getfd(r1, r1, 0x0)
+setns(r2, 0x66020000)
+syz_clone(0x498144ee5f62e149, 0x0, 0x17, 0x0, 0x0, 0x0)

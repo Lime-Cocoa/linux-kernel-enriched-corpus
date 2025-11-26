@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=05466b4385dd6748e67acb5a85bda7da86f86bb7
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"cgroups":true,"close_fds":true,"tmpdir":true,"callcomments":true}
+pipe2$9p(&(0x7f0000000140)={<r0=>0xffffffffffffffff, <r1=>0xffffffffffffffff}, 0x80800)
+mount$9p_fd(0x0, &(0x7f0000000080)='./cgroup\x00', &(0x7f0000000100), 0x4, &(0x7f00000001c0)={'trans=fd,', {'rfdno', 0x3d, r0}, 0x2c, {'wfdno', 0x3d, r1}, 0x2c, {[{@directio}]}})

@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=ceb5a0aa46fabc9430ba0149ac4e02a23d1234f3
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"cgroups":true,"close_fds":true,"tmpdir":true,"callcomments":true}
+socketpair$nbd(0x1, 0x1, 0x0, &(0x7f0000000080)={<r0=>0xffffffffffffffff})
+r1 = syz_open_dev$ndb(&(0x7f00000000c0), 0x0, 0x0)
+ioctl$NBD_SET_SOCK(r1, 0xab00, r0)
+mount(&(0x7f0000000100)=@nbd={'/dev/nbd', 0x0}, &(0x7f0000000040)='./cgroup\x00', &(0x7f0000000000)='ext2\x00', 0x200000, 0x0)

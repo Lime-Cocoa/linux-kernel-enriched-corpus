@@ -1,0 +1,17 @@
+# https://syzkaller.appspot.com/bug?id=5a1ad3be676e3deb77606714e960534d93222f79
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":6,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"resetnet":true,"close_fds":true,"segv":true}
+syz_mount_image$vfat(&(0x7f0000000240), &(0x7f0000000200)='./file0\x00', 0x2, &(0x7f0000001500)=ANY=[@ANYRES8=0x0, @ANYRES16=0x0, @ANYRES64, @ANYRES64], 0x1, 0x25f, &(0x7f0000000cc0)="$eJzs2s9rHGUYB/BnkkjXlHQj/qIB8UUvehmanDwINkgLYkCpjaCCdGomumSzGzJLYEXa4MWrdy+exaM3QYr3XPwLevAiucRbD+JId5d2s/RQW2PT5vO57APvfnlm991ZnoF3/81vNzfWq3y96MVUlsXM+diNW1nMx1RMx9BuvH7tjZsvffDRx+8ur6xcuJTSxeXLi0sppTMv//LJVz++cqN3+sOfzvx8KvbmP90/WPp974W9s/t/X/6iVaVWlTrdXirS1W63V1xtl2mtVW3k2e777bKoytTqVOV27+s/7q6vt7tbW/1UdNbmZre2y6pKRaefNsp+6nVTb7ufis+LVifleZ7mZoOIaDxocPWHW3UdB/VTV6Ku66e/j9M3Yu5mNCN7JmXPns+ev5K9uJudPajr5kRy+uGvmmPgQfefJ4P9P9ns/8k2NtQ1Ija/2VndWR2+DteX16MV7SjjXDTjr7j9MxkZ1hffWblwLg3MR9q8Pspf31mdPpxfjIVRy7pu3KkG+cVhPh3On4rZ8fxSNOO5e/dfume+Ea+9OpbPoxm/fRbdaMfaoPXd/LXFlN5+b2UivzB4HwDAkyZPd9ye3777c2J+y/ND62Pz0TD/L+bDiflqJhZmHu1nJ6Lqf7lRtNvl9skoLo2eY4/L9Tw+xa8RccQtGv9Fi5iKOMpvY2Z0y2THYVOOsnjU/0z8H8ZuHAAAAAAAAAAAAB4j93se8K2HOZIJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAf/gkAAP//1UviSg==")
+prlimit64(0x0, 0xe, &(0x7f0000000140)={0x8, 0x8b}, 0x0)
+sched_setscheduler(0x0, 0x2, &(0x7f0000000340)=0x7)
+r0 = socket$nl_rdma(0x10, 0x3, 0x14)
+sendmsg$RDMA_NLDEV_CMD_NEWLINK(r0, &(0x7f00000000c0)={0x0, 0x0, &(0x7f0000000080)={&(0x7f0000000040)=ANY=[@ANYBLOB="38000000031401002abd7000fedbdf250900020073797a3000000000080041007278650014003300626f6e6430"], 0x38}, 0x1, 0x0, 0x0, 0x4000840}, 0x24004000)
+r1 = socket$nl_rdma(0x10, 0x3, 0x14)
+connect$inet6(0xffffffffffffffff, 0x0, 0x0)
+syz_usb_connect$hid(0x0, 0x36, &(0x7f0000000180)=ANY=[@ANYBLOB], 0x0)
+r2 = openat$rdma_cm(0xffffffffffffff9c, 0x0, 0x2, 0x0)
+write$RDMA_USER_CM_CMD_CREATE_ID(r2, &(0x7f0000000140)={0x0, 0x18, 0xfa00, {0x2, &(0x7f0000000040)={<r3=>0xffffffffffffffff}, 0x111, 0x2}}, 0x20)
+write$RDMA_USER_CM_CMD_RESOLVE_ADDR(r2, &(0x7f0000000280)={0x15, 0x110, 0xfa00, {r3, 0x0, 0x0, 0x30, 0x0, @in={0x1b, 0x0, @empty}, @ib={0x1b, 0x0, 0xfffffffe, {"000000e8ffffffffffffff0000000001"}}}}, 0x118)
+sendmsg$RDMA_NLDEV_CMD_PORT_GET(r1, &(0x7f00000002c0)={0x0, 0x0, &(0x7f0000000200)={&(0x7f0000000140)=ANY=[@ANYBLOB="200000000414010026bd7000ffdbdf2508000100000000000800"], 0x20}, 0x1, 0x0, 0x0, 0x20048000}, 0x20000000)
+socket$packet(0x11, 0x3, 0x300)
+bpf$PROG_LOAD(0x5, &(0x7f0000000a00)={0x1d, 0x10, &(0x7f0000000980)=@ringbuf={{0x18, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x7}, {}, {}, [@call={0x85, 0x0, 0x0, 0x62}], {{}, {0x7, 0x0, 0xb, 0x2, 0x0, 0x0, 0x2}, {0x85, 0x0, 0x0, 0x85}}}, &(0x7f0000000080)='GPL\x00', 0x5, 0x0, 0x0, 0x0, 0x42, '\x00', 0x0, @fallback, 0xffffffffffffffff, 0x6, 0x0, 0x0, 0x10, 0x0, 0x0, 0xffffffffffffffff, 0xffffffffffffffff, 0x0, 0x0, 0x0, 0x10, 0x0, @void, @value}, 0x94)

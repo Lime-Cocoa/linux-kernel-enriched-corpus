@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=3feb67c72c0ff010c7c13edfdca4936d18b36743
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":4,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"close_fds":true,"callcomments":true}
+r0 = syz_open_procfs$namespace(0x0, &(0x7f00000001c0)='ns/uts\x00')
+setuid(0xee01)
+setns(r0, 0x4000000)

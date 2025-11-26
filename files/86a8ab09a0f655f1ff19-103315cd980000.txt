@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=55edf3e011396b92b45a539909ceefd87707bcfc
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"netdev":true,"close_fds":false,"callcomments":true}
+r0 = syz_genetlink_get_family_id$auto_ethtool(&(0x7f00000002c0), 0xffffffffffffffff)
+r1 = socket$nl_generic(0x10, 0x3, 0x10)
+sendmsg$auto_ETHTOOL_MSG_TSCONFIG_GET(r1, &(0x7f0000002080)={0x0, 0x0, &(0x7f0000002040)={&(0x7f0000002000)={0x2c, r0, 0x1, 0x70bd2a, 0x25dfdbfb, {}, [@ETHTOOL_A_TSCONFIG_HEADER={0x18, 0x1, 0x0, 0x1, [@ETHTOOL_A_HEADER_DEV_NAME={0x14, 0x2, 'macvlan0\x00'}]}]}, 0x2c}, 0x1, 0x0, 0x0, 0x40}, 0x0)

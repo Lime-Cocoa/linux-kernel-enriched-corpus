@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=b213c0c5a1b4d79c3de14255c20c43f6b2ed9fde
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":6,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+unshare(0x2a060400) (rerun: 64)
+semtimedop(0x0, &(0x7f000009df40)=[{0x1, 0x80, 0x1800}], 0x1, 0x0)
+ioctl$SIOCAX25NOUID(0xffffffffffffffff, 0x89e3, 0x0) (rerun: 64)
+open(&(0x7f0000000000)='./file0\x00', 0x200c01, 0xa8)

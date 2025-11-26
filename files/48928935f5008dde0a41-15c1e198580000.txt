@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=ce9e03bcb92d5f6c328a814bc5a74bde9e8e885e
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false}
+r0 = openat$auto_kernfs_file_fops_kernfs_internal(0xffffffffffffff9c, &(0x7f0000000040)='/sys/devices/virtual/block/loop12/queue/nr_requests\x00', 0x80302, 0x0)
+sendfile$auto(r0, r0, 0x0, 0x2)
