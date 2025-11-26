@@ -149,7 +149,7 @@ def make_requests_request(url, proxies=None):
     response.raise_for_status()
     return response
 
-def rate_limited_get(url, delay=5.0, max_retries=5):
+def rate_limited_get(url, delay=1.0, max_retries=5):
     """
     带限流和重试机制的 HTTP GET 请求函数
     
@@ -626,7 +626,7 @@ def main():
     lock = multiprocessing.Lock()
     last_time = multiprocessing.Value('d', time.time())
     file_counter = multiprocessing.Value('i', 0)  # 用于测试模式：跟踪已下载的文件数量
-    pool = multiprocessing.Pool(5, initializer=init_worker, initargs=(lock, last_time, proxies, httpx_proxy, SAVE_DIR, file_counter))
+    pool = multiprocessing.Pool(16, initializer=init_worker, initargs=(lock, last_time, proxies, httpx_proxy, SAVE_DIR, file_counter))
     pool.map(get_reproducers, bugs)
     pool.close()
     pool.join()
