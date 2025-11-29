@@ -1,0 +1,15 @@
+# https://syzkaller.appspot.com/bug?id=fddc0bdd4ad134a1c1c4f1dad75653643baab5fe
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+socket$nl_generic(0x10, 0x3, 0x10)
+syz_init_net_socket$bt_hci(0x1f, 0x3, 0x5)
+close(0x4)
+syz_open_procfs$namespace(0x0, &(0x7f0000000040)='ns/cgroup\x00')
+openat$tcp_congestion(0xffffffffffffff9c, &(0x7f0000000180), 0x1, 0x0)
+bpf$MAP_CREATE(0x0, 0x0, 0x0)
+bpf$PROG_LOAD(0x5, 0x0, 0x0)
+r0 = socket$l2tp6(0xa, 0x2, 0x73)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0xb635773f07ebbeef, 0x8031, 0xffffffffffffffff, 0x215eb000)
+r1 = socket(0x14, 0x2, 0x4)
+ioctl$sock_SIOCGIFINDEX(r1, 0x61d0, 0x0)
+sendmsg$IPCTNL_MSG_TIMEOUT_DEFAULT_GET(r1, &(0x7f0000000500)={0x0, 0x0, &(0x7f00000000c0)={&(0x7f00000002c0)=ANY=[@ANYRES64=r0], 0x1c}, 0x1, 0x0, 0x0, 0x20040824}, 0x8040)
