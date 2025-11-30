@@ -1,0 +1,20 @@
+# https://syzkaller.appspot.com/bug?id=2bdf08f4bde1fa63ed15b12801430b32ae42c5c3
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"tun":true,"netdev":true,"resetnet":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"ieee802154":true,"sysctl":true,"swap":true,"tmpdir":true,"segv":true,"callcomments":true}
+prctl$PR_SET_MM_MAP(0x23, 0xe, &(0x7f0000000080)={&(0x7f0000ff0000/0x1000)=nil, &(0x7f0000ffd000/0x3000)=nil, &(0x7f0000ffc000/0x4000)=nil, &(0x7f0000ffc000/0x4000)=nil, &(0x7f0000ff8000/0x4000)=nil, &(0x7f0000ff8000/0x3000)=nil, &(0x7f0000ffb000/0x3000)=nil, &(0x7f0000ffb000/0x3000)=nil, &(0x7f0000ffc000/0x3000)=nil, &(0x7f0000ffa000/0x1000)=nil, &(0x7f0000ffa000/0x2000)=nil, 0x0}, 0x68)
+sendmsg$NFT_BATCH(0xffffffffffffffff, &(0x7f0000000080)={0x0, 0x0, 0x0}, 0x0)
+io_uring_setup(0x7, &(0x7f0000000040)={0x0, 0xc8a1, 0x4000, 0x8, 0xc1})
+r0 = syz_open_procfs(0xffffffffffffffff, &(0x7f0000000000)='fdinfo/3\x00')
+syz_emit_ethernet(0xbe, &(0x7f0000000000)={@local, @link_local, @void, {@ipv4={0x800, @udp={{0x5, 0x4, 0x0, 0x0, 0xb0, 0x0, 0x0, 0x0, 0x11, 0x0, @rand_addr=0x64010101, @dev={0xac, 0x14, 0x14, 0x22}}, {0x0, 0x4e20, 0x9c, 0x0, @wg=@initiation={0x1, 0x0, "7b4b143b7461fd777b1c012bd14efb9f49fcdb8f080c26a04883ad5c8c82b8af", "584cbf2649a50f2dbc43efa8698dfa871c51852e4451b57d037ad3c045942824251d7d17b5191584cdd4fbe40a27424d", "bcfd56f1373669caaa2f19935e6996c7096ffe4f3a4745a8f762b964", {"9a3bfbc1f39cb307b3472eb9cdb042d2", "643fcbb2c5a57df67d544af6e8dafe09"}}}}}}}, 0x0)
+preadv(r0, &(0x7f00000005c0)=[{&(0x7f0000000280)=""/196, 0xc4}], 0x1, 0x8, 0xffffffff)
+preadv(r0, &(0x7f00000005c0)=[{&(0x7f0000000280)=""/196, 0xc4}], 0x1, 0x8, 0xffffffff)
+getpid()
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2, 0x8031, 0xffffffffffffffff, 0x2000)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2, 0x8031, 0xffffffffffffffff, 0x2000)
+socketpair$unix(0x1, 0x2, 0x0, 0x0)
+sendmmsg$unix(0xffffffffffffffff, 0x0, 0x0, 0x0)
+recvmmsg(0xffffffffffffffff, 0x0, 0x0, 0x2, 0x0)
+sendmsg$nl_xfrm(0xffffffffffffffff, 0x0, 0x800)
+bpf$BPF_RAW_TRACEPOINT_OPEN(0x11, 0x0, 0x0)
+syz_mount_image$squashfs(&(0x7f0000000040), &(0x7f00000001c0)='./file1\x00', 0x1, &(0x7f00000000c0)=ANY=[], 0x1, 0x1b9, &(0x7f0000000200)="$eJzKKC4sZmBgYPj7sSaZwYEBDNgY+BhuMzIysDAggBs7hH7FBqH1oPwXUEWaUPFFUPo/FBRXVmUn5uSkFtGQgV2OCepyUkwEqUeXuvIxlp9UcwYbg4MBjxpGMgIKJ+M/kYo5McJ5YBg8DFQzMJ4ZEo7UMfDLgIcPy8DHDkkMRkwpBNe+kYnhLTilX/9YkwxiJEBLKZBYCgMDA0gMWQ0oNo8gqZFiAWNGZob/cDUsUH3qDAwM+iW5BfrFlVW6mbmJ6anpqXlGRsZmBiYGBqZG+mmZOakGEJIRyQpYEQWiQWUvqEzlRJJnZWBguActYLmQCmOGlxBrYU6DyjMi6wWVw/+hhbSGMgMKYGL4zw/Wy4Ewg5HhAFwvVBsDKAhCGNRAyhjKGxiRRFXAprAwgL3kwcDIwAzlGMIqDUa4XXPYQRJ6yfk5Ke0MjAyMMG3LGVjgZhg+ZmAFc9gQboTIGFs0wITaobQKlPaA0suh9GMoLc+IWhexgE14AuVpNICcWJFYUlJkyHYeqsUQVOuBxYzYYLJGAnCbWaC2fmJD9ZwMO8MoGAWjYBSMglEwCkbBEAOAAAAA///VcVhB")
+ioctl$DMA_BUF_SET_NAME_A(0xffffffffffffffff, 0x40046201, 0x0)
