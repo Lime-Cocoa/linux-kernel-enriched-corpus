@@ -1,0 +1,13 @@
+# https://syzkaller.appspot.com/bug?id=53d6045110ee58527dbbab1f6230f8d00d41fd3f
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"tmpdir":true,"callcomments":true}
+r0 = syz_mount_image$ext4(&(0x7f0000000240)='ext4\x00', &(0x7f0000000280)='mnt\x00', 0x0, &(0x7f0000000000), 0x0, 0x248, &(0x7f0000000940)="$eJzs3T9oFFkcB/DfzO5eLsly5O6ag4O7g+M47gIh1x3YxEYhICGICCpERGyURIgJdomVjYXWKqlsgtgZrdMEG0Ww8k+K2AgaLAwWWqzsTiLRbDBxN7uS+Xxg2JnZee/3hp3v221mNoDc6omIgYgoRERvRJQiIll/wB/Z0rO6OdO5MBJRqRx8ndSOy7Yza+26I2I6Iv6PiPk0idPFiMm5o0tvH+//+9JE6a8bc0c6W3qSq5aXFg+sXB+6eHvwv8kHj14OJTEQ5U/Oq/mSOvuKScRPO1HsG5EU2z0CtmL4/K0n1dz/HBF/1vJfijSyD+/y+Hfzpfj32mZtr7x6+Gsrxwo0X6VSqn4HTleA3EkjohxJ2hcR2Xqa9vVlv+GfFrrSM2Pj53pPjU2Mnmz3TAU0Szlicd/djjvdn+X/RSHLP7B7VfN/aHj2WXV9pdDu0QCtVM1/7/Gpf0L+IXfkH/JL/iG/5B/yS/4hv+Qf8kv+Ydf4frsN5B/yS/4hv+Qf8mt9/gGAfKl0tPsOZKBd2j3/AAAAAAAAAAAAAAAAAAAAG810LoysLa2qee9qxPLeiCjWq1+o/R/x2qNNu94k1cM+SrJmDTn2e4MdNOjmDt59vZVHuv3wfOfqb8X935rZW3nbLaZGI6YvRER/sbjx+ktWr7+v9+MX3i+daLBAg/Ycbm/997Otq1Wqs2+wkmQr/fXmnzR+qb3Wn3/Km/S5HWffNdgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALfMhAAD//+M2bGo=")
+ioctl$FS_IOC_ADD_ENCRYPTION_KEY(r0, 0xc0506617, &(0x7f0000000480)={@id={0x2, 0x0, @a}, 0x40, 0x0, '\x00', @a})
+mkdirat(0xffffffffffffff9c, &(0x7f0000000200)='mnt/encrypted_dir\x00', 0x0)
+r1 = openat(0xffffffffffffff9c, &(0x7f0000000680)='mnt/encrypted_dir\x00', 0x800, 0x0)
+ioctl$FS_IOC_SET_ENCRYPTION_POLICY(r1, 0x800c6613, &(0x7f00000006c0)=@v2={0x2, @adiantum, 0x4, '\x00', @a})
+chdir(&(0x7f00000002c0)='mnt/encrypted_dir\x00')
+openat$ptmx(0xffffffffffffff9c, 0x0, 0x0, 0x0)
+openat(0xffffffffffffff9c, &(0x7f0000000040)='./file1\x00', 0x143042, 0x49)
+r2 = openat(0xffffffffffffff9c, &(0x7f0000000040)='./file1\x00', 0x1, 0x0)
+pwrite64(r2, &(0x7f0000000140)='2', 0xfdef, 0xe7c)
