@@ -1,0 +1,6 @@
+# https://syzkaller.appspot.com/bug?id=5a316d16c05376c6816276126db956d914927a95
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"segv":true,"callcomments":true}
+openat$tun(0xffffffffffffff9c, &(0x7f0000000000), 0x0, 0x0)
+mprotect(&(0x7f0000000000/0x800000)=nil, 0x800000, 0x1)
+open_tree(0xffffffffffffffff, &(0x7f0000000000)='./file0\x00', 0x1802) (fail_nth: 8)
