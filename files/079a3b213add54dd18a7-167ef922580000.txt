@@ -1,0 +1,9 @@
+# https://syzkaller.appspot.com/bug?id=90eb351242e387ffc4b0c0a4378735e1181e0b3b
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":5,"slowdown":1,"sandbox":"none","sandbox_arg":0,"resetnet":true,"cgroups":true,"close_fds":true,"usb":true,"vhci":true,"wifi":true,"swap":true,"tmpdir":true,"segv":true,"callcomments":true}
+r0 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000280)='cgroup.controllers\x00', 0x275a, 0x0)
+r1 = openat$cgroup_ro(0xffffffffffffff9c, &(0x7f0000000040)='cgroup.controllers\x00', 0x275a, 0x0)
+write$binfmt_script(r1, &(0x7f0000000240), 0x3af4701e)
+mmap(&(0x7f0000000000/0xb36000)=nil, 0xb36000, 0x2, 0x28012, r1, 0x0)
+madvise(&(0x7f0000000000/0x600000)=nil, 0x600000, 0x15)
+ioctl$FS_IOC_RESVSP(r0, 0x4030582b, &(0x7f0000000c00)={0x0, 0x1, 0x4, 0x4e1ee79f, 0x0, 0xf0})
