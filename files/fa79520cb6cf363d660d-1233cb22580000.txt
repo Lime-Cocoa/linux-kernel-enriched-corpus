@@ -1,0 +1,7 @@
+# https://syzkaller.appspot.com/bug?id=172a98e518981ce0cbbe82fd7f9442cbbfd98021
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+mkdirat(0xffffffffffffff9c, &(0x7f0000000100)='./file0\x00', 0x0)
+mount(0x0, &(0x7f0000000080)='./file0\x00', &(0x7f0000000040)='binder\x00', 0x0, 0x0)
+mount$overlay(0x0, &(0x7f0000000140)='./file0\x00', &(0x7f0000000180), 0x0, &(0x7f00000003c0)={[{@lowerdir={'lowerdir', 0x3d, './file0'}, 0x3a}], [], 0x2f})
+file_getattr(0xffffffffffffff9c, &(0x7f00000000c0)='./file0\x00', &(0x7f00000001c0), 0x18, 0x1100)
