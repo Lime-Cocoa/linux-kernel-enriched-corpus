@@ -1,0 +1,5 @@
+# https://syzkaller.appspot.com/bug?id=45d96c8c21b7ac0cd10880ed63d6c19b05249631
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"close_fds":false,"callcomments":true}
+open(&(0x7f0000000000)='./file0\x00', 0x80140, 0x2c)
+open_tree(0xffffffffffffff9c, &(0x7f0000000040)='./file0\x00', 0x9902)
