@@ -1,0 +1,11 @@
+# https://syzkaller.appspot.com/bug?id=fd7b1d7e6601a3aa4899ac2778593cb626e19261
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"threaded":true,"repeat":true,"procs":1,"slowdown":1,"sandbox":"none","sandbox_arg":0,"close_fds":true,"callcomments":true}
+mkdirat(0xffffffffffffff9c, &(0x7f0000000140)='./dev\x00', 0x13b)
+mount(0x0, &(0x7f00000000a0)='./dev\x00', &(0x7f00000000c0)='devtmpfs\x00', 0x0, 0x0)
+mkdir(&(0x7f0000000180)='./config\x00', 0x14)
+mount(0x0, &(0x7f0000000040)='./config\x00', &(0x7f0000000080)='configfs\x00', 0x0, 0x0)
+mkdirat(0xffffffffffffff9c, &(0x7f00000001c0)='./config/usb_gadget/g1\x00', 0x1ff)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000200)='./config/usb_gadget/g1/functions/acm.usb0\x00', 0x1ff)
+openat(0xffffffffffffff9c, &(0x7f0000000800)='./dev/ttyGS0\x00', 0x2, 0x0)
+rmdir(&(0x7f0000000100)='./config/usb_gadget/g1/functions/acm.usb0\x00')
