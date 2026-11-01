@@ -1,0 +1,10 @@
+# https://syzkaller.appspot.com/bug?id=c63b351c0fcb4273cf62b0a478af85906ff7fa3d
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"namespace","sandbox_arg":0,"netdev":true,"cgroups":true,"binfmt_misc":true,"close_fds":true,"usb":true,"ieee802154":true,"tmpdir":true,"callcomments":true}
+r0 = openat$tun(0xffffffffffffff9c, &(0x7f0000000000), 0x2, 0x0)
+ioctl$TUNSETIFF(r0, 0x400454ca, &(0x7f0000000040)={'syzkaller0\x00', 0x1002})
+r1 = socket$nl_route(0x10, 0x3, 0x0)
+r2 = socket$inet_tcp(0x2, 0x1, 0x0)
+ioctl$sock_SIOCGIFINDEX(r2, 0x8933, &(0x7f0000000200)={'batadv0\x00', <r3=>0x0})
+sendmsg$nl_route(r1, &(0x7f0000000300)={0x0, 0x0, &(0x7f0000000340)={&(0x7f0000000380)=@newlink={0x3c, 0x10, 0x5, 0x0, 0x0, {0x0, 0x0, 0x0, 0x0, 0x1, 0x1}, [@IFLA_IFNAME={0x14, 0x3, 'syzkaller0\x00'}, @IFLA_MASTER={0x8, 0xa, r3}]}, 0x3c}}, 0x0)
+write(r0, &(0x7f0000000800)="ffffffffffff0011223344554305000f32000000020200112233445500112233445500ff0000", 0x26) (fail_nth: 8)
