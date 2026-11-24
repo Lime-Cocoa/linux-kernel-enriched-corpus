@@ -1,0 +1,13 @@
+# https://syzkaller.appspot.com/bug?id=478aa142eb3608e449d6a6a6ecde33153a16b6b5
+# See https://goo.gl/kgGztJ for information about syzkaller reproducers.
+#{"repeat":true,"procs":1,"slowdown":1,"sandbox":"","sandbox_arg":0,"leak":true,"close_fds":false,"callcomments":true}
+mkdirat(0xffffffffffffff9c, &(0x7f0000000040)='./config\x00', 0x1ff)
+mount(0x0, &(0x7f0000000040)='./config\x00', &(0x7f0000000080)='configfs\x00', 0x0, 0x0)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000100)='./config/usb_gadget/g1\x00', 0x1ff)
+mkdirat(0xffffffffffffff9c, &(0x7f0000000140)='./config/usb_gadget/g1/functions/Loopback.0\x00', 0x1ff)
+symlinkat(&(0x7f00000001c0)='./config/usb_gadget/g1/functions/Loopback.0\x00', 0xffffffffffffff9c, &(0x7f0000000200)='./config/usb_gadget/g1/configs/c.1/Loopback.0\x00')
+mkdirat(0xffffffffffffff9c, &(0x7f0000000380)='./config/usb_gadget/g1/configs/c.1\x00', 0x1ff)
+r0 = openat(0xffffffffffffff9c, &(0x7f0000000500)='./config/usb_gadget/g1/UDC\x00', 0x1, 0x0)
+write(r0, &(0x7f0000000540)='usbip-vudc.0\n', 0xd)
+r1 = openat(0xffffffffffffff9c, &(0x7f00000003c0)='./config/usb_gadget/g1/UDC\x00', 0x1, 0x0)
+write(r1, &(0x7f0000000400)='\n', 0x1)
